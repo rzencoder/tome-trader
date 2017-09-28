@@ -105,77 +105,61 @@ app.post('/api/deletebook', function (req, res) {
 		.findOne({_id: req.body.id})
 		.remove()
 		.exec(function(err, documents) {
-			if (err) {
-				return console.log(err);
-			}
+			if (err) return console.log(err);
 			User
 				.findOne({username: req.user.username})
 				.exec(function(err, user){
-					if (err) {
-						return console.log(err);
-					}
+					if (err) return console.log(err);
+
+					//Remove trades from user and all trades including deleted book
 					let tradeSentArr = [];
+					let tradeReceivedArr = [];
+					let otherArr = [];
 
-					let otherUsersSentArr = [];
 					user.tradeSent.forEach(trade => {
-
 						if(trade.sent.id === req.body.id){
-							otherUsersSentArr.push(trade.requested.owner)
+							otherArr.push(trade.requested.owner);
 						} else {
 							tradeSentArr.push(trade)
 						}
-					})
-					user.tradeSent = tradeSentArr;
-
-					otherUsersSentArr.forEach(otherUser => {
-						User
-							.findOne({username: otherUser})
-							.exec(function(err, other){
-								if (err) {
-									return console.log(err);
-								}
-								let tempReceivedArr = [];
-
-								other.tradeReceived.forEach(trade => {
-									if(trade.offer.id !== req.body.id){
-											tempReceivedArr.push(trade)
-									}
-								})
-								other.tradeReceived = tempReceivedArr;
-								other.save();
-							});
 					});
 
-
-					let tradeReceivedArr = [];
-					let otherUsersReceivedArr = [];
 					user.tradeReceived.forEach(trade => {
 						if(trade.requested.id === req.body.id){
-
-							otherUsersReceivedArr.push(trade.offer.owner)
+							otherArr.push(trade.offer.owner);
 						} else {
 							tradeReceivedArr.push(trade)
 						}
-					})
+					});
+
 					user.tradeReceived = tradeReceivedArr;
+					user.tradeSent = tradeSentArr;
 					user.save();
 
-					otherUsersReceivedArr.forEach(otherUser => {
+					//Remove duplicate users
+					let userList = [...new Set(otherArr)];
+					userList.forEach(otherUser => {
 						User
 							.findOne({username: otherUser})
 							.exec(function(err, other){
-								if (err) {
-									return console.log(err);
-								}
+								if (err) return console.log(err);
+								let tempReceivedArr = [];
 								let tempSentArr = [];
-								other.tradeSent.forEach(trade => {
 
-									if(trade.requested.id !== req.body.id){
-											tempSentArr.push(trade)
+								other.tradeReceived.forEach(trade => {
+									if(trade.offer.id !== req.body.id){
+										tempReceivedArr.push(trade);
 									}
-								})
-								other.tradeSent = tempSentArr;
+								});
 
+								other.tradeSent.forEach(trade => {
+									if(trade.requested.id !== req.body.id){
+										tempSentArr.push(trade);
+									}
+								});
+
+								other.tradeReceived = tempReceivedArr;
+								other.tradeSent = tempSentArr;
 								other.save();
 							});
 					});
@@ -183,9 +167,7 @@ app.post('/api/deletebook', function (req, res) {
 				Books
 					.find({owner: req.user.username})
 					.exec(function(err, result) {
-						if (err) {
-							return console.log(err);
-						}
+						if (err) return console.log(err);
 						res.status(201).json({
 							user: {
 								username: req.user.username,
