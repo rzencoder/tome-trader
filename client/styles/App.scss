@@ -1,0 +1,414 @@
+@import 'partials/_normalize';
+@import 'partials/_star-rating';
+@import 'partials/_font-awesome';
+@import 'partials/_bookcase';
+@import 'partials/_modal';
+@import 'partials/_header';
+
+/*General Rules*/
+
+html {
+  font-size: 20px;
+  box-sizing: border-box;
+  @media (max-width: 400px){
+    font-size: 16px
+  }
+}
+
+*, *:after, *:before {
+	box-sizing: inherit;
+}
+
+body {
+  font-family: $base-font;
+  background: url('./img/paper-bg.png');
+  margin: 0;
+	color: $base-text-color;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  line-height: 1em;
+}
+
+input {
+  font-family: $base-font;
+  font-size: 1.3rem;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.btn {
+  font-family: $base-font;
+  border: none;
+  border-radius: 5px;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
+/*Home Page*/
+
+.home {
+  width: 80%;
+  margin: 0 auto;
+  @media (max-width: 900px){
+    width: 95%;
+  }
+
+}
+
+.home-main-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  margin: 100px auto 0;
+  @media (max-width: 650px){
+    text-align: center;
+    margin: 30px auto;
+  }
+}
+
+.home-title-container {
+  width: 60%;
+  @media (max-width: 650px){
+    width: 100%;
+  }
+}
+
+.home-title {
+  font-family: $heading-font;
+  text-transform: uppercase;
+  font-size: 4rem;
+  @media (max-width: 900px){
+    font-size: 3rem;
+  }
+  @media (max-width: 650px){
+    margin: 40px 0 30px;
+  }
+}
+
+.btn-action {
+  background: $bg-color;
+  font-size: 1.7rem;
+  color: $second-text-color;
+  border-radius: 10px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  &:hover {
+    background: $bg-color-hover;
+    color: $second-text-color-hover;
+  }
+}
+
+.home-btn {
+  @media (max-width: 650px){
+    margin-bottom: 30px;
+  }
+}
+
+.home-content {
+  background: $base-text-color;
+  width: 100%;
+  // height: 400px;
+}
+
+.home-image {
+  margin-top: 20px;
+  height: 300px;
+  @media (max-width: 900px){
+    height: 220px;
+  }
+  @media (max-width: 650px){
+    display: none;
+  }
+}
+
+.mob-home-image {
+  display:none;
+  @media (max-width: 650px){
+    display: block;
+    height: 220px;
+    margin: 0 auto;
+  }
+  @media (max-width: 450px){
+    height: 160px;
+  }
+}
+/*Books Page*/
+
+.books-title {
+  text-align: center;
+  font-size: 1.8rem;
+  background: $base-text-color;
+  padding: 5px;
+  color: $second-text-color;
+  margin: 0;
+}
+
+/*Login Page*/
+
+.login-container {
+  width: 80%;
+  display: flex;
+  margin: 100px auto;
+  input {
+    margin: 5px 0;
+    @media (max-width: 350px){
+      width: 90%;
+    }
+  }
+  @media (max-width: 1000px){
+    width: 95%;
+  }
+  @media (max-width: 850px){
+    width: 80%;
+    flex-direction: column;
+    margin: 40px auto;
+  }
+  @media (max-width: 350px){
+    width: 95%;
+  }
+}
+
+.login-headings {
+  font-family: $heading-font;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+.login {
+  width: 50%;
+  padding-left: 50px;
+  border-left: 3px solid $base-text-color;
+  @media (max-width: 850px){
+    width: 100%;
+    border: none;
+    padding: 40px 0 0 0;
+    border-top: 3px solid $base-text-color;
+  }
+}
+
+.error-message {
+  width: 90%;
+  color: $second-text-color;
+  background: $bg-color;
+  border: 3px solid $second-text-color;
+  padding: 7px 10px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.register {
+  width: 50%;
+  padding-left: 50px;
+  @media (max-width: 850px){
+    width: 100%;
+    padding: 0 0 30px 0;
+  }
+}
+
+.btn-submit {
+  color: $second-text-color;
+  background: $bg-color;
+  font-size: 1.3rem;
+  padding: 4px 8px;
+  font-weight: 700;
+  margin-top: 10px;
+  &:hover {
+    background: $bg-color-hover;
+  }
+}
+
+/*Profile Page*/
+
+.message {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 5px;
+  background: $btn-action-color;
+  color: $base-text-color;
+  border: 4px solid $base-text-color;
+  margin: 10px 0;
+}
+
+.profile-container {
+  display: flex;
+  @media (max-width: 850px){
+    flex-direction: column;
+  }
+}
+
+.profile-info {
+  width: 250px;
+  height: 581px;
+  padding: 20px;
+  background: $bg-color;
+  color: $second-text-color;
+  @media (max-width: 850px){
+    width: 100%;
+    height: auto;
+  }
+  input {
+    width: 90%;
+    margin: 10px 0;
+  }
+  h2 {
+    margin: 10px 0;
+  }
+}
+
+.user-details {
+  > div {
+    cursor: pointer;
+    &:hover {
+      color: $second-text-color-hover;
+    }
+  }
+}
+
+.trade-sent {
+  background: $base-text-color;
+  color: $second-text-color;
+  padding: 10px;
+  border: 3px solid $second-text-color;
+  margin-bottom: 5px;
+  > p {
+    padding: 5px 0;
+  }
+}
+
+.trade-received {
+  background: $bg-color;
+  color: $second-text-color;
+  padding: 10px;
+  border: 3px solid $second-text-color;
+  margin-bottom: 5px;
+  div > p {
+    padding: 5px 0;
+  }
+}
+
+.decision-message {
+  font-weight: 700;
+  color: $btn-action-color;
+}
+
+.add-book-btn {
+  background: $btn-action-color;
+  color: $base-text-color;
+  &:hover {
+    background: $btn-action-color-hover;
+  }
+}
+
+.accept-btn {
+  background: $btn-action-color;
+  color: $base-text-color;
+  font-weight: 700;
+  margin: 10px 10px 5px 0;
+  &:hover {
+    background: $btn-action-color-hover;
+  }
+}
+
+.decline-btn {
+  background: $second-text-color;
+  color: $bg-color;
+  font-weight: 700;
+  margin: 10px 10px 5px 0;
+  &:hover {
+    background: $second-text-color-hover;
+  }
+}
+
+.mybooks {
+  padding: 20px;
+}
+
+.notfound {
+  width: 80%;
+  margin: 30px auto;
+  font-size: 2rem;
+}
+
+.about-container {
+  width: 80%;
+  margin: 50px auto;
+  font-size: 1.4rem;
+  h1 {
+    font-size: 2.4rem;
+  }
+  p {
+    padding: 15px 0;
+  }
+  ul {
+    list-style-type: disc;
+  }
+  li {
+    margin-left: 30px;
+  }
+}
+
+/*Account Page*/
+
+.account-container {
+  width: 60%;
+  margin: 50px auto;
+  font-size: 1.4rem;
+  @media (max-width: 800px){
+    width: 85%;
+  }
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  span {
+    font-weight: 700;
+  }
+  form {
+    background: $bg-color;
+    color: $second-text-color;
+    border: 3px solid $second-text-color;
+    padding: 10px;
+  }
+  input {
+    width: 90%;
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+}
+
+.account-info {
+  margin: 20px 0;
+  background: $base-text-color;
+  color: $second-text-color;
+  border: 3px solid $second-text-color;
+  padding: 10px;
+}
+
+.btn.btn-submit.acc-update {
+  font-size: 1.4rem;
+}

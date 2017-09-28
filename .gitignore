@@ -1,0 +1,7 @@
+/node_modules
+*.tmp
+*.log
+.vscode
+.env
+/.sass-cache
+/public

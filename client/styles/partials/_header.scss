@@ -1,0 +1,119 @@
+@import '_variables';
+
+.header {
+  font-family: $heading-font;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  background: url('./img/red-header.jpg');
+  border-bottom: solid 5px $second-text-color;
+  @media (max-width: 600px) {
+    border-bottom: solid 3px $second-text-color;
+    padding: 5px;
+  }
+  h1 {
+    font-family: $heading-font;
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+    color: $second-text-color;
+    @media (max-width: 600px) {
+      font-size: 36px;
+      padding: 5px;
+    }
+    @media (max-width: 330px) {
+      font-size: 30px;
+    }
+    &:hover {
+      color: $second-text-color-hover;
+    }
+  }
+}
+
+.header-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nav {
+  overflow: hidden;
+  display: block;
+  margin: auto 0;
+  width: 100%;
+  .icon {
+    display: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+  }
+  a {
+    float: right;
+    display: block;
+    text-align: center;
+    padding: 0;
+    color: $second-text-color;
+    margin: 9px 20px;
+    font-size: 1.5rem;
+    &:hover {
+      color: $second-text-color-hover;
+    }
+    &:first-child {
+      float: left;
+      margin: 4px 0 -5px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .header-container {
+    width: 100%;
+  }
+ .nav a:not(:first-child) {
+    display: none;
+    padding: 10px 0;
+    margin: 0;
+ }
+ .nav a.icon {
+    position: absolute;
+    display: block;
+    top: 0px;
+    right: 5px;
+    font-size: 1.5rem;
+  }
+  .nav.header-mobile {
+    position: relative;
+  }
+  .nav.header-mobile a {
+    float: none;
+    display: block;
+    text-align: center;
+    padding-left: 5px;
+  }
+  .nav.header-mobile a:first-child {
+    text-align: left;
+    border-bottom: solid 3px $second-text-color;
+    position: relative;
+    z-index: 3;
+  }
+  .nav.header-mobile a:not(:first-child):not(:last-child){
+    background: $base-text-color;
+  }
+  .nav.header-mobile a.icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+ .nav a.icon {
+    position: absolute;
+    display: block;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,15 @@
+@import 'fonts/font.css';
+
+$bg-color: #590e0e;
+$bg-color-hover: lighten($bg-color, 10%);
+$btn-action-color: #A7C6DA;
+$btn-action-color-hover: darken($btn-action-color, 15%);
+$bookcase-frame:  #110401;
+
+$base-text-color: #230903;
+$base-text-color-hover: lighten($base-text-color, 10%);
+$second-text-color: #ddb967;
+$second-text-color-hover: darken($second-text-color, 15%);
+
+$base-font: 'Pridi', serif;
+$heading-font: 'Tomb_Raider', sans-serif;

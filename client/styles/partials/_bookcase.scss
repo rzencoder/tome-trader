@@ -1,0 +1,52 @@
+@import 'variables';
+
+.books-message {
+  width: 60%;
+  margin: 30px auto;
+  font-size: 1.6rem;
+  padding: 5px;
+  font-weight: 700;
+  color: $base-text-color;
+  background: $btn-action-color;
+  border: 4px solid $base-text-color;
+  border-radius: 5px;
+  text-align: center;
+  @media (max-width: 800px){
+    width: 80%;
+  }
+}
+
+.bookcase-frame {
+  max-width: 900px;
+  margin: 30px auto;
+	background: $second-text-color;
+	background: url('./img/red-wood.jpg');
+	background-size: 230px;
+	border-left: 10px solid $bookcase-frame;
+	border-right: 10px solid $bookcase-frame;
+  border-top: 10px solid $bookcase-frame;
+	text-align: center;
+	&:first-of-type {
+		border-top: 10px solid $bookcase-frame;
+	}
+	.book-wrapper {
+		display: inline-block;
+		width: 160px;
+		vertical-align: bottom;
+		height: 210px;
+		position: relative;
+		margin: 10px 0;
+		max-width: 100%;
+		img {
+      height: auto;
+      width: auto;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+      transform: translateX(-50%);
+			max-height: 100%;
+			max-width: 100%;
+      cursor: pointer;
+		}
+	}
+}

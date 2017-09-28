@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Tomb_Raider';
+  src: url('Tomb_Raider.eot');
+  src: url('Tomb_Raider.woff2') format('woff2'),
+       url('Tomb_Raider.woff') format('woff'),
+       url('Tomb_Raider.ttf') format('truetype'),
+       url('Tomb_Raider.svg#Tomb_Raider') format('svg'),
+       url('Tomb_Raider.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
