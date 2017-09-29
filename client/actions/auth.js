@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
-const path = 'https://tometrader.herokuapp.com/';
+const path = 'https://tometrader.herokuapp.com';
 
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
