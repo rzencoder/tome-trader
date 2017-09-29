@@ -311,64 +311,136 @@ app.post('/api/declinetrade', function (req, res) {
 
 app.post('/api/accepttrade', function (req, res) {
 	const { id, username, ownerBookId, ownerUsername } = req.body;
+	let usersArr = [];
+	//Delete all trades with both books
 	User.findOne({username: username}, function(err, user){
-		const newTradeReceived = [];
+		let newTradeReceived = [];
 		user.tradeReceived.forEach(trade => {
 			if(trade.offer.id === ownerBookId){
 
-			} else {
+			}
+			else if (trade.requested.id === id) {
+				usersArr.push(trade.offer.owner);
+			}
+			else {
 				newTradeReceived.push(trade);
 			}
 		});
-		user.tradeReceived = newTradeReceived;
 
-		const newTradeSent = [];
+		let newTradeSent = [];
 		user.tradeSent.forEach(trade => {
 			if(trade.sent.id === id){
 
-			} else {
+			}
+			else if (trade.requested.id === ownerBookId) {
+				usersArr.push(trade.requested.owner);
+
+			}
+			else {
 				newTradeSent.push(trade);
 			}
 		});
+
+		user.tradeReceived = newTradeReceived;
 		user.tradeSent = newTradeSent;
 		user.save();
-	User.findOne({username: ownerUsername}, function(err, owner){
-		const newTradeSent = [];
-		owner.tradeSent.forEach(trade => {
-			if(trade.sent.id === ownerBookId && trade.requested.id === id){
 
-			} else {
-				newTradeReceived.push(trade);
-			}
-		});
-		owner.tradeSent = newTradeSent;
-		owner.save();
+		//Delete all trades containing the two books from user to be traded with
+		User.findOne({username: ownerUsername}, function(err, ownerUser){
+			let ownerTradeReceived = [];
+			ownerUser.tradeReceived.forEach(trade => {
+				if(trade.offer.id === id){
 
-	Books.findById(id).exec(function(err, book){
-		book.owner = ownerUsername,
-		book.save();
-	Books.findById(ownerBookId).exec(function(err, ownbook){
-		ownbook.owner = username,
-		ownbook.save();
-	Books
-		.find({owner: req.user.username})
-		.exec(function(err, result) {
-			if (err) {
-				return console.log(err);
-			}
-			res.status(201).json({
-				user: {
-					username: req.user.username,
-					city: user.city,
-					country: user.country,
-					tradeSent: user.tradeSent,
-					tradeReceived: user.tradeReceived,
-					books: result
+				}
+				else if (trade.requested.id === ownerBookId) {
+					usersArr.push(trade.offer.owner);
+				}
+				else {
+					ownerTradeReceived.push(trade);
 				}
 			});
-		});
-		});
-		});
+
+			let ownerTradeSent = [];
+			ownerUser.tradeSent.forEach(trade => {
+				if(trade.sent.id === ownerBookId){
+
+				}
+				else if (trade.requested.id === id) {
+					usersArr.push(trade.requested.owner);
+				}
+				else {
+					ownerTradeSent.push(trade);
+				}
+			});
+
+			ownerUser.tradeReceived = ownerTradeReceived;
+			ownerUser.tradeSent = ownerTradeSent;
+			ownerUser.save();
+
+			//Remove duplicate users
+			let tempList = [...new Set(usersArr)];
+			let userList = tempList.filter(item => {
+				return item !== username && item !== ownerUsername
+			});
+
+			//Delete trades from any user who has requested a trade with the two books
+			userList.forEach(i => {
+				User.findOne({username: i}, function(err, item){
+					let itemTradeReceived = [];
+					item.tradeReceived.forEach(trade => {
+						if(trade.offer.id === ownerBookId || trade.requested.id === id ||
+						   trade.offer.id === id || trade.requested.id === ownerBookId ){
+						}
+						else {
+							itemTradeReceived.push(trade);
+						}
+					});
+
+					let itemTradeSent = [];
+					item.tradeSent.forEach(trade => {
+						if(trade.sent.id === id || trade.requested.id === ownerBookId ||
+						   trade.sent.id === ownerBookId || trade.requested.id === id ){
+						}
+						else {
+							itemTradeSent.push(trade);
+						}
+					});
+
+					item.tradeReceived = itemTradeReceived;
+					item.tradeSent = itemTradeSent;
+					item.save();
+
+				});
+			});
+
+			//Swap Books over
+			Books.findById(ownerBookId).exec(function(err, ownbook){
+				ownbook.owner = username,
+				ownbook.save();
+
+				Books.findById(id).exec(function(err, book){
+					book.owner = ownerUsername,
+					book.save(function(){
+
+					Books
+						.find({owner: username})
+						.exec(function(err, result) {
+							if (err) return console.log(err);
+							res.status(201).json({
+								user: {
+									username: req.user.username,
+									city: user.city,
+									country: user.country,
+									tradeSent: user.tradeSent,
+									tradeReceived: user.tradeReceived,
+									books: result,
+									errorMessage: ''
+								}
+							});
+						});
+					});
+				});
+			});
 		});
 	});
 });
