@@ -135,7 +135,7 @@ function loginError(error) {
 
 function checkAuth() {
   return function (dispatch) {
-    return _axios2.default.post(path + '/auth/verify').then(function (res) {
+    return _axios2.default.post('/auth/verify').then(function (res) {
       dispatch(receiveLogin(res.data));
     }).catch(function (err) {
       console.log('Login Required', err.response.data);
@@ -147,7 +147,7 @@ function checkAuth() {
 
 function login(data) {
   return function (dispatch) {
-    return _axios2.default.post(path + '/login', data).then(function (res) {
+    return _axios2.default.post('/login', data).then(function (res) {
       _reactRouter.browserHistory.push('/profile');
     }).catch(function (err) {
       console.log('Login Required', err.response.data);
@@ -158,7 +158,7 @@ function login(data) {
 
 function register(data) {
   return function (dispatch) {
-    return _axios2.default.post(path + '/register', data).then(function (res) {
+    return _axios2.default.post('/register', data).then(function (res) {
       _reactRouter.browserHistory.push('/profile');
     }).catch(function (err) {
       console.log('Login Required', err.response.data);
@@ -169,7 +169,7 @@ function register(data) {
 
 function logout() {
   return function (dispatch) {
-    return _axios2.default.get(path + '/logout').then(function (res) {
+    return _axios2.default.get('/logout').then(function (res) {
       dispatch(logoutUser());
       _reactRouter.browserHistory.push('/');
     }).catch(function (err) {

@@ -45,7 +45,7 @@ function loginError(error) {
 
 export function checkAuth() {
   return dispatch => {
-    return axios.post(path + '/auth/verify').then ( res => {
+    return axios.post('/auth/verify').then ( res => {
         dispatch(receiveLogin(res.data));
     }).catch(err => {
          console.log('Login Required', err.response.data);
@@ -57,7 +57,7 @@ export function checkAuth() {
 
 export function login(data) {
   return dispatch => {
-    return axios.post(path + '/login', data).then ( res => {
+    return axios.post('/login', data).then ( res => {
       browserHistory.push('/profile');
     }).catch(err => {
          console.log('Login Required', err.response.data);
@@ -68,7 +68,7 @@ export function login(data) {
 
 export function register(data) {
   return dispatch => {
-    return axios.post(path + '/register', data).then ( res => {
+    return axios.post('/register', data).then ( res => {
       browserHistory.push('/profile');
     }).catch(err => {
          console.log('Login Required', err.response.data);
@@ -79,7 +79,7 @@ export function register(data) {
 
 export function logout() {
   return dispatch => {
-    return axios.get(path + '/logout').then( res => {
+    return axios.get('/logout').then( res => {
       dispatch(logoutUser());
       browserHistory.push('/');
     }).catch(err => {
