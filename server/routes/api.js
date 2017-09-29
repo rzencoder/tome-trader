@@ -59,12 +59,13 @@ app.post('/api/addbook', (req, res) => {
 	axios(url)
 		.then(response => {
 			const data = response.data.items[0].volumeInfo;
+            const imageUrl = data.imageLinks.thumbnail.slice(0, 3) + "s" + data.imageLinks.thumbnail.slice(3);
 			const book = new Books({
 				owner: req.user.username,
 				title: data.title,
 				author: data.authors[0],
 				description: data.description,
-				imageUrl: data.imageLinks.thumbnail,
+				imageUrl: imageUrl,
 				rating: data.averageRating,
 				pages: data.pageCount
 			});
