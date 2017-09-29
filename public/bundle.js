@@ -819,7 +819,7 @@ var Book = function (_Component) {
 
 		_this.state = {
 			showModal: false,
-			value: _this.props.user.isAuthenticated ? _this.props.user.books[0]._id : ''
+			value: _this.props.user.isAuthenticated && _this.props.user.books.length !== 0 ? _this.props.user.books[0]._id : ''
 		};
 
 		_this.handleOpenModal = _this.handleOpenModal.bind(_this);
@@ -848,13 +848,15 @@ var Book = function (_Component) {
 		key: 'handleSubmit',
 		value: function handleSubmit(event) {
 			event.preventDefault();
-			this.props.requestTrade({
-				"id": this.state.value,
-				"username": this.props.user.username,
-				"ownerBookId": this.props.book._id,
-				"ownerUsername": this.props.book.owner
-			});
-			this.setState({ showModal: false });
+			if (this.state.value !== '') {
+				this.props.requestTrade({
+					"id": this.state.value,
+					"username": this.props.user.username,
+					"ownerBookId": this.props.book._id,
+					"ownerUsername": this.props.book.owner
+				});
+				this.setState({ showModal: false });
+			}
 		}
 	}, {
 		key: 'render',

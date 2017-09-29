@@ -57,7 +57,7 @@ class Book extends Component {
 		super(props);
 		this.state = {
 			showModal: false,
-			value: this.props.user.isAuthenticated ? this.props.user.books[0]._id : ''
+			value: this.props.user.isAuthenticated && this.props.user.books.length !== 0 ? this.props.user.books[0]._id : ''
 		};
 
 		this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -79,14 +79,16 @@ class Book extends Component {
 	}
 
 	handleSubmit (event) {
-		event.preventDefault();
-		this.props.requestTrade({
-			"id": this.state.value,
-			"username": this.props.user.username,
-			"ownerBookId": this.props.book._id,
-			"ownerUsername": this.props.book.owner
-		});
-    this.setState({ showModal: false });
+        event.preventDefault();
+        if(this.state.value !== ''){        
+            this.props.requestTrade({
+                "id": this.state.value,
+                "username": this.props.user.username,
+                "ownerBookId": this.props.book._id,
+                "ownerUsername": this.props.book.owner
+            });
+            this.setState({ showModal: false });
+        }
 	}
 
 	render () {
