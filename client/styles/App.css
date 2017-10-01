@@ -1726,9 +1726,11 @@ Direction
 .books-message {
   width: 60%;
   margin: 30px auto;
-  font-size: 1.6rem;
-  padding: 5px;
-  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 5px 0 0;
+  font-family: "Tomb_Raider", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
   color: #230903;
   background: #a7c6da;
   border: 4px solid #230903;
@@ -1742,7 +1744,7 @@ Direction
   }
 }
 
-/* line 19, partials/_bookcase.scss */
+/* line 21, partials/_bookcase.scss */
 .bookcase-frame {
   max-width: 900px;
   margin: 30px auto;
@@ -1754,11 +1756,11 @@ Direction
   border-top: 10px solid #110401;
   text-align: center;
 }
-/* line 29, partials/_bookcase.scss */
+/* line 31, partials/_bookcase.scss */
 .bookcase-frame:first-of-type {
   border-top: 10px solid #110401;
 }
-/* line 32, partials/_bookcase.scss */
+/* line 34, partials/_bookcase.scss */
 .bookcase-frame .book-wrapper {
   display: inline-block;
   width: 160px;
@@ -1768,7 +1770,7 @@ Direction
   margin: 10px 0;
   max-width: 100%;
 }
-/* line 40, partials/_bookcase.scss */
+/* line 42, partials/_bookcase.scss */
 .bookcase-frame .book-wrapper img {
   height: auto;
   width: auto;
@@ -1849,9 +1851,11 @@ Direction
 /* line 56, partials/_modal.scss */
 .book-title {
   font-size: 1.8rem;
+  font-family: "Tomb_Raider", sans-serif;
+  text-transform: uppercase;
   padding-bottom: 5px;
   border-bottom: solid 2px #ddb967;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   width: 90%;
 }
 @media (max-width: 450px) {
@@ -1862,7 +1866,7 @@ Direction
   }
 }
 
-/* line 68, partials/_modal.scss */
+/* line 70, partials/_modal.scss */
 .rating {
   justify-content: flex-start;
   align-items: center;
@@ -1870,13 +1874,13 @@ Direction
   padding: 10px 0 5px;
 }
 @media (max-width: 450px) {
-  /* line 68, partials/_modal.scss */
+  /* line 70, partials/_modal.scss */
   .rating {
     padding: 2px 0;
   }
 }
 
-/* line 78, partials/_modal.scss */
+/* line 80, partials/_modal.scss */
 .book-description {
   font-size: 0.9rem;
   margin: 5px 20px 10px;
@@ -1884,45 +1888,45 @@ Direction
   max-height: 25vh;
 }
 
-/* line 85, partials/_modal.scss */
+/* line 87, partials/_modal.scss */
 .showmore {
   color: #a7c6da;
 }
-/* line 87, partials/_modal.scss */
+/* line 89, partials/_modal.scss */
 .showmore:hover {
   color: #71a3c3;
 }
 
-/* line 92, partials/_modal.scss */
+/* line 94, partials/_modal.scss */
 .btn-trade {
   background: #a7c6da;
   color: #521507;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-top: 10px;
   padding: 5px;
   font-weight: 700;
 }
-/* line 99, partials/_modal.scss */
+/* line 101, partials/_modal.scss */
 .btn-trade:hover {
   background: #71a3c3;
   color: #230903;
 }
 
-/* line 105, partials/_modal.scss */
+/* line 107, partials/_modal.scss */
 .trade-form {
   width: 90%;
 }
-/* line 107, partials/_modal.scss */
+/* line 109, partials/_modal.scss */
 .trade-form select {
   width: 100%;
   font-size: 1.1rem;
 }
-/* line 111, partials/_modal.scss */
+/* line 113, partials/_modal.scss */
 .trade-form option {
   font-size: 1rem;
 }
 
-/* line 116, partials/_modal.scss */
+/* line 118, partials/_modal.scss */
 .close-modal {
   position: absolute;
   color: #ddb967;
@@ -1930,7 +1934,7 @@ Direction
   right: 5px;
   cursor: pointer;
 }
-/* line 122, partials/_modal.scss */
+/* line 124, partials/_modal.scss */
 .close-modal:hover {
   color: #ca9a2d;
 }
@@ -2282,37 +2286,39 @@ input {
 .books-title {
   text-align: center;
   font-size: 1.8rem;
-  background: #230903;
-  padding: 5px;
+  font-family: "Tomb_Raider", sans-serif;
+  text-transform: uppercase;
+  background: #590e0e;
+  padding: 5px 0 0;
   color: #ddb967;
   margin: 0;
 }
 
 /*Login Page*/
-/* line 168, App.scss */
+/* line 170, App.scss */
 .login-container {
   width: 80%;
   display: flex;
   margin: 100px auto;
 }
-/* line 172, App.scss */
+/* line 174, App.scss */
 .login-container input {
   margin: 5px 0;
 }
 @media (max-width: 350px) {
-  /* line 172, App.scss */
+  /* line 174, App.scss */
   .login-container input {
     width: 90%;
   }
 }
 @media (max-width: 1000px) {
-  /* line 168, App.scss */
+  /* line 170, App.scss */
   .login-container {
     width: 95%;
   }
 }
 @media (max-width: 850px) {
-  /* line 168, App.scss */
+  /* line 170, App.scss */
   .login-container {
     width: 80%;
     flex-direction: column;
@@ -2320,27 +2326,27 @@ input {
   }
 }
 @media (max-width: 350px) {
-  /* line 168, App.scss */
+  /* line 170, App.scss */
   .login-container {
     width: 95%;
   }
 }
 
-/* line 191, App.scss */
+/* line 193, App.scss */
 .login-headings {
   font-family: "Tomb_Raider", sans-serif;
   text-transform: uppercase;
   font-size: 2.5rem;
 }
 
-/* line 197, App.scss */
+/* line 199, App.scss */
 .login {
   width: 50%;
   padding-left: 50px;
   border-left: 3px solid #230903;
 }
 @media (max-width: 850px) {
-  /* line 197, App.scss */
+  /* line 199, App.scss */
   .login {
     width: 100%;
     border: none;
@@ -2349,7 +2355,7 @@ input {
   }
 }
 
-/* line 209, App.scss */
+/* line 211, App.scss */
 .error-message {
   width: 90%;
   color: #ddb967;
@@ -2360,20 +2366,20 @@ input {
   margin-bottom: 10px;
 }
 
-/* line 219, App.scss */
+/* line 221, App.scss */
 .register {
   width: 50%;
   padding-left: 50px;
 }
 @media (max-width: 850px) {
-  /* line 219, App.scss */
+  /* line 221, App.scss */
   .register {
     width: 100%;
     padding: 0 0 30px 0;
   }
 }
 
-/* line 228, App.scss */
+/* line 230, App.scss */
 .btn-submit {
   color: #ddb967;
   background: #590e0e;
@@ -2382,13 +2388,13 @@ input {
   font-weight: 700;
   margin-top: 10px;
 }
-/* line 235, App.scss */
+/* line 237, App.scss */
 .btn-submit:hover {
   background: #851515;
 }
 
 /*Profile Page*/
-/* line 242, App.scss */
+/* line 244, App.scss */
 .message {
   font-size: 1.4rem;
   font-weight: 700;
@@ -2399,52 +2405,56 @@ input {
   margin: 10px 0;
 }
 
-/* line 252, App.scss */
+/* line 254, App.scss */
 .profile-container {
   display: flex;
 }
 @media (max-width: 850px) {
-  /* line 252, App.scss */
+  /* line 254, App.scss */
   .profile-container {
     flex-direction: column;
   }
 }
 
-/* line 259, App.scss */
+/* line 261, App.scss */
 .profile-info {
-  width: 250px;
+  width: 270px;
   height: 581px;
   padding: 20px;
+  font-family: "Tomb_Raider", sans-serif;
+  text-transform: uppercase;
   background: #590e0e;
+  font-size: 1.2rem;
   color: #ddb967;
 }
 @media (max-width: 850px) {
-  /* line 259, App.scss */
+  /* line 261, App.scss */
   .profile-info {
     width: 100%;
     height: auto;
   }
 }
-/* line 269, App.scss */
+/* line 274, App.scss */
 .profile-info input {
   width: 90%;
   margin: 10px 0;
 }
-/* line 273, App.scss */
+/* line 278, App.scss */
 .profile-info h2 {
   margin: 10px 0;
+  font-size: 1.7rem;
 }
 
-/* line 279, App.scss */
+/* line 285, App.scss */
 .user-details > div {
   cursor: pointer;
 }
-/* line 281, App.scss */
+/* line 287, App.scss */
 .user-details > div:hover {
   color: #ca9a2d;
 }
 
-/* line 287, App.scss */
+/* line 293, App.scss */
 .trade-sent {
   background: #230903;
   color: #ddb967;
@@ -2452,12 +2462,12 @@ input {
   border: 3px solid #ddb967;
   margin-bottom: 5px;
 }
-/* line 293, App.scss */
+/* line 299, App.scss */
 .trade-sent > p {
   padding: 5px 0;
 }
 
-/* line 298, App.scss */
+/* line 304, App.scss */
 .trade-received {
   background: #590e0e;
   color: #ddb967;
@@ -2465,129 +2475,144 @@ input {
   border: 3px solid #ddb967;
   margin-bottom: 5px;
 }
-/* line 304, App.scss */
+/* line 310, App.scss */
 .trade-received div > p {
   padding: 5px 0;
 }
 
-/* line 309, App.scss */
+/* line 315, App.scss */
 .decision-message {
   font-weight: 700;
   color: #a7c6da;
 }
 
-/* line 314, App.scss */
+/* line 320, App.scss */
 .add-book-btn {
   background: #a7c6da;
   color: #230903;
 }
-/* line 317, App.scss */
+/* line 323, App.scss */
 .add-book-btn:hover {
   background: #71a3c3;
 }
 
-/* line 322, App.scss */
+/* line 328, App.scss */
 .accept-btn {
   background: #a7c6da;
   color: #230903;
   font-weight: 700;
   margin: 10px 10px 5px 0;
 }
-/* line 327, App.scss */
+/* line 333, App.scss */
 .accept-btn:hover {
   background: #71a3c3;
 }
 
-/* line 332, App.scss */
+/* line 338, App.scss */
 .decline-btn {
   background: #ddb967;
   color: #590e0e;
   font-weight: 700;
   margin: 10px 10px 5px 0;
 }
-/* line 337, App.scss */
+/* line 343, App.scss */
 .decline-btn:hover {
   background: #ca9a2d;
 }
 
-/* line 342, App.scss */
+/* line 348, App.scss */
 .mybooks {
   padding: 20px;
+  font-family: "Tomb_Raider", sans-serif;
+  text-transform: uppercase;
 }
 
-/* line 346, App.scss */
+/* line 354, App.scss */
 .notfound {
   width: 80%;
   margin: 30px auto;
   font-size: 2rem;
+  font-family: "Tomb_Raider", sans-serif;
+  text-transform: uppercase;
 }
 
-/* line 352, App.scss */
+/* line 362, App.scss */
 .about-container {
   width: 80%;
   margin: 50px auto;
   font-size: 1.4rem;
 }
-/* line 356, App.scss */
+/* line 366, App.scss */
 .about-container h1 {
   font-size: 2.4rem;
+  font-family: "Tomb_Raider", sans-serif;
+  text-transform: uppercase;
 }
-/* line 359, App.scss */
+/* line 371, App.scss */
 .about-container p {
   padding: 15px 0;
 }
-/* line 362, App.scss */
+/* line 374, App.scss */
 .about-container ul {
   list-style-type: disc;
 }
-/* line 365, App.scss */
+/* line 377, App.scss */
 .about-container li {
   margin-left: 30px;
 }
 
 /*Account Page*/
-/* line 372, App.scss */
+/* line 384, App.scss */
 .account-container {
   width: 60%;
   margin: 50px auto;
   font-size: 1.4rem;
 }
 @media (max-width: 800px) {
-  /* line 372, App.scss */
+  /* line 384, App.scss */
   .account-container {
     width: 85%;
   }
 }
-/* line 379, App.scss */
+/* line 391, App.scss */
 .account-container h1 {
   font-size: 2.4rem;
-  font-weight: 700;
+  font-weight: 600;
+  font-family: "Tomb_Raider", sans-serif;
+  text-transform: uppercase;
 }
-/* line 383, App.scss */
+/* line 397, App.scss */
 .account-container h2 {
   font-size: 1.8rem;
   font-weight: 700;
   margin: 10px 0;
+  font-family: "Tomb_Raider", sans-serif;
+  text-transform: uppercase;
 }
-/* line 388, App.scss */
+/* line 404, App.scss */
 .account-container span {
   font-weight: 700;
+  text-transform: uppercase;
 }
-/* line 391, App.scss */
+/* line 408, App.scss */
 .account-container form {
   background: #590e0e;
   color: #ddb967;
   border: 3px solid #ddb967;
   padding: 10px;
 }
-/* line 397, App.scss */
+/* line 414, App.scss */
 .account-container input {
   width: 90%;
   margin: 10px 0;
   font-size: 1.2rem;
 }
+/* line 419, App.scss */
+.account-container .user {
+  padding: 3px 0;
+}
 
-/* line 404, App.scss */
+/* line 424, App.scss */
 .account-info {
   margin: 20px 0;
   background: #230903;
@@ -2596,7 +2621,7 @@ input {
   padding: 10px;
 }
 
-/* line 412, App.scss */
+/* line 432, App.scss */
 .btn.btn-submit.acc-update {
   font-size: 1.4rem;
 }

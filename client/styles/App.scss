@@ -157,8 +157,10 @@ input {
 .books-title {
   text-align: center;
   font-size: 1.8rem;
-  background: $base-text-color;
-  padding: 5px;
+  font-family: $heading-font;
+  text-transform: uppercase;
+  background: $bg-color;
+  padding: 5px 0 0;
   color: $second-text-color;
   margin: 0;
 }
@@ -257,10 +259,13 @@ input {
 }
 
 .profile-info {
-  width: 250px;
+  width: 270px;
   height: 581px;
   padding: 20px;
+  font-family: $heading-font;
+  text-transform: uppercase;
   background: $bg-color;
+  font-size: 1.2rem;
   color: $second-text-color;
   @media (max-width: 850px){
     width: 100%;
@@ -272,6 +277,7 @@ input {
   }
   h2 {
     margin: 10px 0;
+    font-size: 1.7rem;
   }
 }
 
@@ -341,12 +347,16 @@ input {
 
 .mybooks {
   padding: 20px;
+  font-family: $heading-font;
+  text-transform: uppercase;
 }
 
 .notfound {
   width: 80%;
   margin: 30px auto;
   font-size: 2rem;
+  font-family: $heading-font;
+  text-transform: uppercase;
 }
 
 .about-container {
@@ -355,6 +365,8 @@ input {
   font-size: 1.4rem;
   h1 {
     font-size: 2.4rem;
+    font-family: $heading-font;
+    text-transform: uppercase;
   }
   p {
     padding: 15px 0;
@@ -378,15 +390,20 @@ input {
   }
   h1 {
     font-size: 2.4rem;
-    font-weight: 700;
+    font-weight: 600;
+    font-family: $heading-font;
+    text-transform: uppercase;
   }
   h2 {
     font-size: 1.8rem;
     font-weight: 700;
     margin: 10px 0;
+    font-family: $heading-font;
+    text-transform: uppercase;
   }
   span {
     font-weight: 700;
+    text-transform: uppercase;
   }
   form {
     background: $bg-color;
@@ -398,6 +415,9 @@ input {
     width: 90%;
     margin: 10px 0;
     font-size: 1.2rem;
+  }
+  .user {
+    padding: 3px 0;
   }
 }
 

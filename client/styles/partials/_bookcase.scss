@@ -3,9 +3,11 @@
 .books-message {
   width: 60%;
   margin: 30px auto;
-  font-size: 1.6rem;
-  padding: 5px;
-  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 5px 0 0;
+  font-family: $heading-font;
+  text-transform: uppercase;
+  font-weight: 600;
   color: $base-text-color;
   background: $btn-action-color;
   border: 4px solid $base-text-color;
