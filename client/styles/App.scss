@@ -244,7 +244,7 @@ input {
 .message {
   font-size: 1.4rem;
   font-weight: 700;
-  padding: 5px;
+  padding: 5px 5px 0;
   background: $btn-action-color;
   color: $base-text-color;
   border: 4px solid $base-text-color;
@@ -284,13 +284,16 @@ input {
 .user-details {
   > div {
     cursor: pointer;
+    color: $btn-action-color;
     &:hover {
-      color: $second-text-color-hover;
+      color: $btn-action-color-hover;
     }
   }
 }
 
 .trade-sent {
+  font-family: $base-font;
+  text-transform: none;
   background: $base-text-color;
   color: $second-text-color;
   padding: 10px;
@@ -302,6 +305,8 @@ input {
 }
 
 .trade-received {
+  font-family: $base-font;
+  text-transform: none;
   background: $bg-color;
   color: $second-text-color;
   padding: 10px;
@@ -416,9 +421,6 @@ input {
     margin: 10px 0;
     font-size: 1.2rem;
   }
-  .user {
-    padding: 3px 0;
-  }
 }
 
 .account-info {
@@ -427,6 +429,9 @@ input {
   color: $second-text-color;
   border: 3px solid $second-text-color;
   padding: 10px;
+  > div {
+      padding: 5px 0;
+  }
 }
 
 .btn.btn-submit.acc-update {

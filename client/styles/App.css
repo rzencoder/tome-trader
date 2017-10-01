@@ -2398,7 +2398,7 @@ input {
 .message {
   font-size: 1.4rem;
   font-weight: 700;
-  padding: 5px;
+  padding: 5px 5px 0;
   background: #a7c6da;
   color: #230903;
   border: 4px solid #230903;
@@ -2448,86 +2448,91 @@ input {
 /* line 285, App.scss */
 .user-details > div {
   cursor: pointer;
+  color: #a7c6da;
 }
-/* line 287, App.scss */
+/* line 288, App.scss */
 .user-details > div:hover {
-  color: #ca9a2d;
+  color: #71a3c3;
 }
 
-/* line 293, App.scss */
+/* line 294, App.scss */
 .trade-sent {
+  font-family: "Pridi", serif;
+  text-transform: none;
   background: #230903;
   color: #ddb967;
   padding: 10px;
   border: 3px solid #ddb967;
   margin-bottom: 5px;
 }
-/* line 299, App.scss */
+/* line 302, App.scss */
 .trade-sent > p {
   padding: 5px 0;
 }
 
-/* line 304, App.scss */
+/* line 307, App.scss */
 .trade-received {
+  font-family: "Pridi", serif;
+  text-transform: none;
   background: #590e0e;
   color: #ddb967;
   padding: 10px;
   border: 3px solid #ddb967;
   margin-bottom: 5px;
 }
-/* line 310, App.scss */
+/* line 315, App.scss */
 .trade-received div > p {
   padding: 5px 0;
 }
 
-/* line 315, App.scss */
+/* line 320, App.scss */
 .decision-message {
   font-weight: 700;
   color: #a7c6da;
 }
 
-/* line 320, App.scss */
+/* line 325, App.scss */
 .add-book-btn {
   background: #a7c6da;
   color: #230903;
 }
-/* line 323, App.scss */
+/* line 328, App.scss */
 .add-book-btn:hover {
   background: #71a3c3;
 }
 
-/* line 328, App.scss */
+/* line 333, App.scss */
 .accept-btn {
   background: #a7c6da;
   color: #230903;
   font-weight: 700;
   margin: 10px 10px 5px 0;
 }
-/* line 333, App.scss */
+/* line 338, App.scss */
 .accept-btn:hover {
   background: #71a3c3;
 }
 
-/* line 338, App.scss */
+/* line 343, App.scss */
 .decline-btn {
   background: #ddb967;
   color: #590e0e;
   font-weight: 700;
   margin: 10px 10px 5px 0;
 }
-/* line 343, App.scss */
+/* line 348, App.scss */
 .decline-btn:hover {
   background: #ca9a2d;
 }
 
-/* line 348, App.scss */
+/* line 353, App.scss */
 .mybooks {
   padding: 20px;
   font-family: "Tomb_Raider", sans-serif;
   text-transform: uppercase;
 }
 
-/* line 354, App.scss */
+/* line 359, App.scss */
 .notfound {
   width: 80%;
   margin: 30px auto;
@@ -2536,52 +2541,52 @@ input {
   text-transform: uppercase;
 }
 
-/* line 362, App.scss */
+/* line 367, App.scss */
 .about-container {
   width: 80%;
   margin: 50px auto;
   font-size: 1.4rem;
 }
-/* line 366, App.scss */
+/* line 371, App.scss */
 .about-container h1 {
   font-size: 2.4rem;
   font-family: "Tomb_Raider", sans-serif;
   text-transform: uppercase;
 }
-/* line 371, App.scss */
+/* line 376, App.scss */
 .about-container p {
   padding: 15px 0;
 }
-/* line 374, App.scss */
+/* line 379, App.scss */
 .about-container ul {
   list-style-type: disc;
 }
-/* line 377, App.scss */
+/* line 382, App.scss */
 .about-container li {
   margin-left: 30px;
 }
 
 /*Account Page*/
-/* line 384, App.scss */
+/* line 389, App.scss */
 .account-container {
   width: 60%;
   margin: 50px auto;
   font-size: 1.4rem;
 }
 @media (max-width: 800px) {
-  /* line 384, App.scss */
+  /* line 389, App.scss */
   .account-container {
     width: 85%;
   }
 }
-/* line 391, App.scss */
+/* line 396, App.scss */
 .account-container h1 {
   font-size: 2.4rem;
   font-weight: 600;
   font-family: "Tomb_Raider", sans-serif;
   text-transform: uppercase;
 }
-/* line 397, App.scss */
+/* line 402, App.scss */
 .account-container h2 {
   font-size: 1.8rem;
   font-weight: 700;
@@ -2589,30 +2594,26 @@ input {
   font-family: "Tomb_Raider", sans-serif;
   text-transform: uppercase;
 }
-/* line 404, App.scss */
+/* line 409, App.scss */
 .account-container span {
   font-weight: 700;
   text-transform: uppercase;
 }
-/* line 408, App.scss */
+/* line 413, App.scss */
 .account-container form {
   background: #590e0e;
   color: #ddb967;
   border: 3px solid #ddb967;
   padding: 10px;
 }
-/* line 414, App.scss */
+/* line 419, App.scss */
 .account-container input {
   width: 90%;
   margin: 10px 0;
   font-size: 1.2rem;
 }
-/* line 419, App.scss */
-.account-container .user {
-  padding: 3px 0;
-}
 
-/* line 424, App.scss */
+/* line 426, App.scss */
 .account-info {
   margin: 20px 0;
   background: #230903;
@@ -2620,8 +2621,12 @@ input {
   border: 3px solid #ddb967;
   padding: 10px;
 }
-
 /* line 432, App.scss */
+.account-info > div {
+  padding: 5px 0;
+}
+
+/* line 437, App.scss */
 .btn.btn-submit.acc-update {
   font-size: 1.4rem;
 }

@@ -148,7 +148,7 @@ class Profile extends Component {
 				<div className="profile-info">
 					<div className="user-details">
 						<h2>{this.props.user.username}</h2>
-						<div><Link to="/account">Account Settings</Link></div>
+						<div><Link className="account-btn" to="/account">Account Settings</Link></div>
 						<div className="logout-btn" onClick={this.logout}>Logout</div>
 					</div>
 					<div className="addbook">
