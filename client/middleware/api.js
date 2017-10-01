@@ -1,4 +1,4 @@
-const BASE_URL = 'https://tometrader.herokuapp.com';
+const BASE_URL = 'http://127.0.0.1:8080';
 
 function callApi(endpoint, authenticated) {
 

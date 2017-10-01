@@ -4,4 +4,4 @@
 .vscode
 .env
 /.sass-cache
-/client
+/public
